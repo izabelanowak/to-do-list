@@ -1,3 +1,56 @@
-.list__item--done {
+.list {
+    margin-top: 10px;
+}
+
+.list__header {
+    margin-bottom: 2px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.list__container {
+    padding: 10px;
+    background-color: #fff;
+    list-style: none;
+    margin: 0;
+
+}
+
+.list__item {
+    margin-bottom: 10px;
+}
+
+.list__content {
+    padding: 10px;
+
+}
+
+.list__content--done {
     text-decoration: line-through;
+}
+
+.list__button {
+    padding: 5px;
+    font-size: 20px;
+    min-width: 33px;
+    color: white;
+    border: none;
+
+}
+
+.list__button--done {
+    background-color: rgb(11, 173, 84);
+}
+
+.list__button--done:hover {
+    background-color: hsl(147, 88%, 46%);
+}
+
+
+.list__button--remove {
+    background-color: rgb(207, 38, 38);
+}
+
+.list__button--remove:hover {
+    background-color: hsl(0, 69%, 58%);
 }
