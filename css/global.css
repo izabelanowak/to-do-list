@@ -7,3 +7,9 @@ html {
 ::before {
     box-sizing: inherit;
 }
+
+.body {
+    margin: 0 auto;
+    background-color: #eee;
+    font-family: 'Montserrat', sans-serif;
+}
