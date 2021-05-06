@@ -25,6 +25,7 @@
 .form__input {
     padding: 10px;
     flex-basis: 69%;
+    border: 1px solid #ddd;
 }
 
 @media (max-width: 767px) {
