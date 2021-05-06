@@ -51,12 +51,15 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li
-                ${task.done ? " class=\"list__item--done\"" : ""}
-            >
-                <button class="js-done">zrobione?</button>
-                <button class="js-remove">usuń</button>
-                ${task.content}
+            <li class="list__item">
+                <button class="list__button list__button--done js-done">&#x2714;</button>
+                <span class="list__content
+                     ${task.done ? " list__content--done\"" : "\""}
+                >
+                    ${task.content}
+                </span>
+                <button class="list__button list__button--remove js-remove">&#128465;</button>
+               
             </li>
             `;
         }
@@ -66,8 +69,6 @@
         bindEvents();
     };
 
-
-
     const onFormSubmit = (event) => {
         event.preventDefault();
 
@@ -75,7 +76,7 @@
 
         if (newTaskContent === "") {
             return;
-        };
+        }
 
         addNewTask(newTaskContent);
     };
