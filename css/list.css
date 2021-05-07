@@ -19,7 +19,7 @@
 .list__item {
     margin-bottom: 10px;
     display: grid;
-    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #eee;
@@ -27,7 +27,6 @@
 
 .list__content {
     padding: 10px;
-    grid-column: 2;
     overflow-wrap: break-word;
 }
 
