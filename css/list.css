@@ -1,5 +1,6 @@
 .list {
     margin-top: 10px;
+    max-width: 1024px;
 }
 
 .list__header {
