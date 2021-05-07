@@ -46,6 +46,14 @@
         });
     };
 
+    const setFocus = (input) => {
+        input.focus();
+    };
+
+    const clearInputField = (input) => {
+        input.value = "";
+    };
+
     const render = () => {
         let htmlString = "";
 
@@ -53,7 +61,7 @@
             htmlString += `
             <li class="list__item">
                 <button class="list__button list__button--done js-done">
-                ${task.done ? "&#x2714;" : " "}
+                    ${task.done ? "&#x2714;" : " "}
                 </button>
                 <span class="list__content
                      ${task.done ? " list__content--done\"" : "\""}
@@ -61,7 +69,6 @@
                     ${task.content}
                 </span>
                 <button class="list__button list__button--remove js-remove">&#128465;</button>
-               
             </li>
             `;
         }
@@ -74,13 +81,16 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const inputElement = document.querySelector(".js-newTask");
+        setFocus(inputElement);
+        const newTaskContent = inputElement.value.trim();
 
         if (newTaskContent === "") {
             return;
         }
 
         addNewTask(newTaskContent);
+        clearInputField(inputElement);
     };
 
     const init = () => {
