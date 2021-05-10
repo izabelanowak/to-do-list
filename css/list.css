@@ -1,25 +1,21 @@
 .list {
-    margin-top: 10px;
-    max-width: 1024px;
-}
-
-.list__header {
-    margin-bottom: 2px;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.list__container {
-    padding: 10px;
+    padding: 40px 20px 10px 20px;
     background-color: #fff;
     list-style: none;
     margin: 0;
 }
 
+.list__header {
+    margin-bottom: 2px;
+    padding: 20px 10px;
+    background-color: #fff;
+}
+
+
 .list__item {
     margin-bottom: 10px;
     display: grid;
-    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-columns: 33px 1fr 33px;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid #eee;
@@ -27,8 +23,8 @@
 
 .list__content {
     padding: 10px;
-    grid-column: 2;
-    overflow-wrap: break-word;
+    justify-content: center;
+    overflow-wrap: anywhere;
 }
 
 .list__content--done {
@@ -36,9 +32,9 @@
 }
 
 .list__button {
+    margin: 10px 0;
     padding: 5px;
     font-size: 20px;
-    width: 33px;
     height: 33px;
     color: white;
     border: none;
