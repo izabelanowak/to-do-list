@@ -29,15 +29,15 @@
     border: none;
 }
 
-.list__button--done {
+.list__button--toggleDone {
     background-color: hsl(120, 61%, 34%);
 }
 
-.list__button--done:hover {
+.list__button--toggleDone:hover {
     background-color: hsl(124, 64%, 39%);
 }
 
-.list__button--done:active {
+.list__button--toggleDone:active {
     background-color: hsl(124, 64%, 44%);
 }
 
