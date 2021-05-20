@@ -49,7 +49,18 @@
         });
     };
 
-    const bindButtonsEvents = () => { };
+    const bindButtonsEvents = () => {
+        const hideDoneButton = document.querySelector(".js-hideDoneTasks");
+
+        hideDoneButton.addEventListener("click", () => {
+        });
+
+        const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
+
+        completeAllTasksButton.addEventListener("click", () => {
+        });
+
+    };
 
     const setFocus = (input) => {
         input.focus();
