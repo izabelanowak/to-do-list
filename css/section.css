@@ -51,7 +51,9 @@
     color: hsl(180, 100%, 35%);
 }
 
-.section__button:disabled {}
+.section__button:disabled {
+    color: gray;
+}
 
 .section__button--hidden {
     display: none;
