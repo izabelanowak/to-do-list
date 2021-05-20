@@ -16,7 +16,7 @@
 }
 
 .section__button {
-    padding: 0;
+    padding: 5px;
     background: none;
     color: hsl(180, 100%, 20%);
     border: none;
@@ -29,6 +29,8 @@
 
 .section__button:active {
     color: hsl(180, 100%, 35%);
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .section__button:disabled {}
