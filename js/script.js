@@ -29,7 +29,7 @@
         ];
         render();
     };
-    const checkAllTasksDone = (button) => {
+    const disableCompleteAllTasksButton = (button) => {
         const allTaskDone = tasks.every(({ done }) => done === true);
         if (allTaskDone) {
             button.disabled = true;
@@ -65,7 +65,7 @@
         });
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
-        checkAllTasksDone(completeAllTasksButton);
+        disableCompleteAllTasksButton(completeAllTasksButton);
         completeAllTasksButton.addEventListener("click", () => {
         });
     };
