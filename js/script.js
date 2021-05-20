@@ -29,7 +29,13 @@
         ];
         render();
     };
+    const checkAllTasksDone = (button) => {
+        const allTaskDone = tasks.every(({ done }) => done === true);
+        if (allTaskDone) {
+            button.disabled = true;
+        }
 
+    };
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -59,7 +65,7 @@
         });
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
-
+        checkAllTasksDone(completeAllTasksButton);
         completeAllTasksButton.addEventListener("click", () => {
         });
     };
