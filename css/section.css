@@ -14,3 +14,25 @@
 .section__body {
     padding: 20px;
 }
+
+.section__button {
+    padding: 0;
+    background: none;
+    color: hsl(180, 100%, 20%);
+    border: none;
+    transition: 1s;
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.section__button:active {
+    color: hsl(180, 100%, 35%);
+}
+
+.section__button:disabled {}
+
+.section__button--hidden {
+    display: none;
+}
