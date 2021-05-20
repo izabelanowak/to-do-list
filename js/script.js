@@ -82,6 +82,7 @@
         let buttonsHTMLContent = "";
 
         buttonsHTMLContent += `
+        <h2 class="section__header">Lista zadań</h2>
         <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-hideDoneTasks">
             Ukryj ukończone
         </button>
@@ -90,7 +91,7 @@
         </button>
         `;
 
-        document.querySelector(".js-buttons").innerHTML = buttonsHTMLContent;
+        document.querySelector(".js-header").innerHTML = buttonsHTMLContent;
     };
 
     const render = () => {
