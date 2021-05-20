@@ -48,6 +48,7 @@
             });
         });
     };
+    const bindButtonsEvents = () => { };
 
     const setFocus = (input) => {
         input.focus();
@@ -56,28 +57,34 @@
     const clearInputField = (input) => {
         input.value = "";
     };
-
-    const render = () => {
+    const renderTasks = () => {
         let tasksListHTMLContent = "";
 
         for (const task of tasks) {
             tasksListHTMLContent += `
-            <li class="list__item">
-                <button class="list__button list__button--toggleDone js-toggleDone">
-                    ${task.done ? "&#x2714;" : ""}
-                </button>
-                <span class="list__content${task.done ? " list__content--done" : ""}">
-                    ${task.content}
-                </span>
-                <button class="list__button list__button--remove js-remove">&#128465;</button>
-            </li>
-            `;
+        <li class="list__item">
+            <button class="list__button list__button--toggleDone js-toggleDone">
+                ${task.done ? "&#x2714;" : ""}
+            </button>
+            <span class="list__content${task.done ? " list__content--done" : ""}">
+                ${task.content}
+            </span>
+            <button class="list__button list__button--remove js-remove">&#128465;</button>
+        </li>
+        `;
         }
 
         document.querySelector(".js-list").innerHTML = tasksListHTMLContent;
+    };
+    const renderButtons = () => { };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
 
         bindRemoveEvents();
         bindToggleDoneEvents();
+        bindButtonsEvents();
     };
 
     const onFormSubmit = (event) => {
