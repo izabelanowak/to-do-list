@@ -26,7 +26,6 @@
             },
             ...tasks.slice(taskIndex + 1)
         ];
-
         render();
     };
 
@@ -39,6 +38,7 @@
             });
         });
     };
+
     const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
 
@@ -48,6 +48,7 @@
             });
         });
     };
+
     const bindButtonsEvents = () => { };
 
     const setFocus = (input) => {
@@ -76,22 +77,20 @@
 
         document.querySelector(".js-list").innerHTML = tasksListHTMLContent;
     };
+
     const renderButtons = () => {
         let buttonsHTMLContent = "";
 
-        if (tasks.length > 0) {
-            buttonsHTMLContent += `
-        <button class="list__textButton js-hideDoneTasks">
+        buttonsHTMLContent += `
+        <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-hideDoneTasks">
             Ukryj ukończone
         </button>
-        <button class="list__textButton js-completeAllTasks">
+        <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-completeAllTasks">
             Ukończ wszystkie
         </button>
         `;
-            document.querySelector(".js-textButtons").innerHTML = buttonsHTMLContent;
-        }
 
-
+        document.querySelector(".js-buttons").innerHTML = buttonsHTMLContent;
     };
 
     const render = () => {
@@ -101,8 +100,6 @@
         bindRemoveEvents();
         bindToggleDoneEvents();
         bindButtonsEvents();
-
-        console.log(tasks.length);
     };
 
     const onFormSubmit = (event) => {
