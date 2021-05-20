@@ -7,12 +7,15 @@
 .section__wrapper {
     display: grid;
     grid-template-columns: 1fr auto auto;
+    grid-gap: 20px;
+    padding: 0 20px 0 0;
     border-bottom: 1px solid #ddd;
 }
 
 @media (max-width: 767px) {
     .section__wrapper {
         grid-template-columns: 1fr;
+        padding-bottom: 20px;
     }
 }
 
@@ -32,7 +35,7 @@
 }
 
 .section__button {
-    padding: 5px;
+    padding: 0;
     background: none;
     color: hsl(180, 100%, 20%);
     border: none;
@@ -45,8 +48,6 @@
 
 .section__button:active {
     color: hsl(180, 100%, 35%);
-    border: 2px solid black;
-    border-radius: 5px;
 }
 
 .section__button:disabled {}
