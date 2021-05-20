@@ -39,6 +39,7 @@
     background: none;
     color: hsl(180, 100%, 20%);
     border: none;
+    cursor: pointer;
     transition: 1s;
 }
 

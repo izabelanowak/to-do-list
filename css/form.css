@@ -20,6 +20,7 @@
     background-color: teal;
     color: white;
     border: none;
+    cursor: pointer;
     transition: 1s;
 }
 
