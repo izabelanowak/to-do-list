@@ -76,7 +76,23 @@
 
         document.querySelector(".js-list").innerHTML = tasksListHTMLContent;
     };
-    const renderButtons = () => { };
+    const renderButtons = () => {
+        let buttonsHTMLContent = "";
+
+        if (tasks.length > 0) {
+            buttonsHTMLContent += `
+        <button class="list__textButton js-hideDoneTasks">
+            Ukryj ukończone
+        </button>
+        <button class="list__textButton js-completeAllTasks">
+            Ukończ wszystkie
+        </button>
+        `;
+            document.querySelector(".js-textButtons").innerHTML = buttonsHTMLContent;
+        }
+
+
+    };
 
     const render = () => {
         renderTasks();
@@ -85,6 +101,8 @@
         bindRemoveEvents();
         bindToggleDoneEvents();
         bindButtonsEvents();
+
+        console.log(tasks.length);
     };
 
     const onFormSubmit = (event) => {
