@@ -5,7 +5,7 @@
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
-            { content: newTaskContent },
+            { content: newTaskContent, done: false },
         ];
         render();
     };
@@ -34,7 +34,15 @@
         if (allTaskDone) {
             button.disabled = true;
         }
+    };
 
+    const setAllTasksDone = () => {
+
+        for (const [index, task] of tasks.entries()) {
+            if (task.done === false) {
+                toggleTaskDone(index);
+            }
+        }
     };
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -66,7 +74,9 @@
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
         disableCompleteAllTasksButton(completeAllTasksButton);
+
         completeAllTasksButton.addEventListener("click", () => {
+            setAllTasksDone();
         });
     };
 
