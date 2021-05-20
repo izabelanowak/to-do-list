@@ -1,5 +1,6 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -53,13 +54,14 @@
         const hideDoneButton = document.querySelector(".js-hideDoneTasks");
 
         hideDoneButton.addEventListener("click", () => {
+            hideDoneTasks = !hideDoneTasks;
+            render();
         });
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
 
         completeAllTasksButton.addEventListener("click", () => {
         });
-
     };
 
     const setFocus = (input) => {
@@ -74,7 +76,7 @@
 
         for (const task of tasks) {
             tasksListHTMLContent += `
-        <li class="list__item">
+        <li class="list__item${task.done & hideDoneTasks ? " list__item--hidden" : ""}">
             <button class="list__button list__button--toggleDone js-toggleDone">
                 ${task.done ? "&#x2714;" : ""}
             </button>
@@ -95,7 +97,7 @@
         buttonsHTMLContent += `
         <h2 class="section__header section__header--noBorder">Lista zadań</h2>
         <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-hideDoneTasks">
-            Ukryj ukończone
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
         </button>
         <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-completeAllTasks">
             Ukończ wszystkie
