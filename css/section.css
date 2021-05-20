@@ -4,11 +4,27 @@
     box-shadow: 0 0 5px #ddd;
 }
 
+.section__wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 767px) {
+    .section__wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
 .section__header {
     font-size: 20px;
     padding: 20px;
     margin: 0;
     border-bottom: 1px solid #ddd;
+}
+
+.section__header--noBorder {
+    border-bottom: none;
 }
 
 .section__body {
