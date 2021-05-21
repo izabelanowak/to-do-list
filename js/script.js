@@ -44,6 +44,7 @@
             }
         }
     };
+
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -73,8 +74,8 @@
         });
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
-        disableCompleteAllTasksButton(completeAllTasksButton);
 
+        disableCompleteAllTasksButton(completeAllTasksButton);
         completeAllTasksButton.addEventListener("click", () => {
             setAllTasksDone();
         });
@@ -87,6 +88,7 @@
     const clearInputField = (input) => {
         input.value = "";
     };
+
     const renderTasks = () => {
         let tasksListHTMLContent = "";
 
