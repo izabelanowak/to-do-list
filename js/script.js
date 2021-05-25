@@ -37,14 +37,19 @@
     };
 
     const setAllTasksDone = () => {
-
         for (const [index, task] of tasks.entries()) {
             if (task.done === false) {
                 toggleTaskDone(index);
             }
         }
+        render();
     };
 
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+    
     const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -69,8 +74,7 @@
         const hideDoneButton = document.querySelector(".js-hideDoneTasks");
 
         hideDoneButton.addEventListener("click", () => {
-            hideDoneTasks = !hideDoneTasks;
-            render();
+            toggleHideDoneTasks();
         });
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
