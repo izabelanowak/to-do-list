@@ -53,6 +53,7 @@
 
 .section__button:disabled {
     color: gray;
+    cursor: not-allowed;
 }
 
 .section__button--hidden {
