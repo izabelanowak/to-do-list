@@ -114,16 +114,16 @@
         let buttonsHTMLContent = "";
 
         buttonsHTMLContent += `
-        <h2 class="section__header section__header--noBorder">Lista zadań</h2>
-        <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-hideDoneTasks">
+        
+        <button class="buttons__button${+tasks.length === 0 ? " buttons__button--hidden" : ""} js-hideDoneTasks">
             ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
         </button>
-        <button class="section__button${+tasks.length === 0 ? " section__button--hidden" : ""} js-completeAllTasks">
+        <button class="buttons__button${+tasks.length === 0 ? " buttons__button--hidden" : ""} js-completeAllTasks">
             Ukończ wszystkie
         </button>
         `;
 
-        document.querySelector(".js-header").innerHTML = buttonsHTMLContent;
+        document.querySelector(".js-buttons").innerHTML = buttonsHTMLContent;
     };
 
     const render = () => {
