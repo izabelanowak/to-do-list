@@ -29,12 +29,6 @@
         ];
         render();
     };
-    const disableCompleteAllTasksButton = (button) => {
-        const allTaskDone = tasks.every(({ done }) => done === true);
-        if (allTaskDone) {
-            button.disabled = true;
-        }
-    };
 
     const setAllTasksDone = () => {
         for (const [index, task] of tasks.entries()) {
@@ -71,18 +65,17 @@
     };
 
     const bindButtonsEvents = () => {
-        const hideDoneButton = document.querySelector(".js-hideDoneTasks");
+        const toggleHideDoneTasksButton = document.querySelector(".js-hideDoneTasks");
 
-        hideDoneButton.addEventListener("click", () => {
-            toggleHideDoneTasks();
-        });
+        if (toggleHideDoneTasksButton) {
+            toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+        }
 
         const completeAllTasksButton = document.querySelector(".js-completeAllTasks");
 
-        disableCompleteAllTasksButton(completeAllTasksButton);
-        completeAllTasksButton.addEventListener("click", () => {
-            setAllTasksDone();
-        });
+        if (completeAllTasksButton) {
+            completeAllTasksButton.addEventListener("click", setAllTasksDone);
+        }
     };
 
     const setFocus = (input) => {
@@ -111,19 +104,24 @@
     };
 
     const renderButtons = () => {
-        let buttonsHTMLContent = "";
+        const buttonsElement = document.querySelector(".js-buttons");
 
-        buttonsHTMLContent += `
-        
-        <button class="buttons__button${+tasks.length === 0 ? " buttons__button--hidden" : ""} js-hideDoneTasks">
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
+
+        buttonsElement.innerHTML = `
+        <button class="buttons__button js-hideDoneTasks">
             ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
         </button>
-        <button class="buttons__button${+tasks.length === 0 ? " buttons__button--hidden" : ""} js-completeAllTasks">
+        <button 
+            class="buttons__button js-completeAllTasks"
+            ${tasks.every(({ done }) => done) ? " disabled" : ""}
+        >
             Ukończ wszystkie
         </button>
         `;
-
-        document.querySelector(".js-buttons").innerHTML = buttonsHTMLContent;
     };
 
     const render = () => {
