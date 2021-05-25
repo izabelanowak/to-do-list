@@ -32,7 +32,7 @@
 
     const setAllTasksDone = () => {
         for (const [index, task] of tasks.entries()) {
-            if (task.done === false) {
+            if (!task.done) {
                 toggleTaskDone(index);
             }
         }
